@@ -8,7 +8,7 @@ extends 'Perinci::To::DocBase';
 
 has wrap => (is => 'rw', default=>sub{1});
 
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -192,6 +192,9 @@ sub _gen_function {
 
     $self->dec_indent;
     $self->add_lines("");
+
+    # test
+    #$self->add_lines({wrap=>0}, "Line 1\nLine 2\n");
 }
 
 sub gen_functions {
@@ -223,7 +226,7 @@ Perinci::To::Text - Generate text documentation from Rinci metadata
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 AUTHOR
 

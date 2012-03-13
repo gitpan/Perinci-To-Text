@@ -19,7 +19,7 @@ has _lh => (is => 'rw'); # store localize handle
 has _indent_level => (is => 'rw');
 has indent => (is => 'rw', default => sub{"  "}); # indent character
 
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 sub BUILD {
     require Module::Load;
@@ -538,7 +538,7 @@ Perinci::To::DocBase - Base class for class that generates documentation from Ri
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 DESCRIPTION
 

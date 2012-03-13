@@ -4,7 +4,7 @@ use base 'Perinci::To::DocBase::I18N';
 use Locale::Maketext::Lexicon::Gettext;
 our %Lexicon = %{ Locale::Maketext::Lexicon::Gettext->parse(<DATA>) };
 
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 #use Data::Dump; dd \%Lexicon;
 
@@ -20,7 +20,7 @@ Perinci::To::DocBase::I18N::en - English translation for Perinci::To::DocBase
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 AUTHOR
 
@@ -199,3 +199,11 @@ msgstr "This function supports undo operation. Please read 'The undo protocol' i
 msgid  "This function is declared as %1 (%2). Please read the '%1' feature in Rinci::function specification."
 msgid  "This function is declared as %1 (%2). Please read the '%1' feature in Rinci::function specification."
 
+# test multiline
+
+msgid  ""
+"Line 1"
+"Line 2"
+msgstr ""
+"Line 1"
+"Line 2"

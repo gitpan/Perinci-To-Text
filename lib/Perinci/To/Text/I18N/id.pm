@@ -4,13 +4,12 @@ use parent qw(Perinci::To::Text::I18N Perinci::To::DocBase::I18N::id);
 use Locale::Maketext::Lexicon::Gettext;
 our %Lexicon = %{ Locale::Maketext::Lexicon::Gettext->parse(<DATA>) };
 
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 #use Data::Dump; dd \%Lexicon;
 
 1;
 # ABSTRACT: Indonesian translation for Perinci::To::Text
-
 
 
 =pod
@@ -21,7 +20,7 @@ Perinci::To::Text::I18N::id - Indonesian translation for Perinci::To::Text
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 AUTHOR
 
@@ -38,3 +37,5 @@ the same terms as the Perl 5 programming language system itself.
 
 
 __DATA__
+msgid  ""
+msgstr ""

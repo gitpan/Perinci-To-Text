@@ -2,7 +2,7 @@ package Perinci::To::Text::I18N;
 
 use parent 'Perinci::To::DocBase::I18N';
 
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 1;
 # ABSTRACT: Project class for Perinci::To::Text
@@ -16,7 +16,7 @@ Perinci::To::Text::I18N - Project class for Perinci::To::Text
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 AUTHOR
 

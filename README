@@ -2,7 +2,7 @@ NAME
     Perinci::To::Text - Generate text documentation from Rinci metadata
 
 VERSION
-    version 0.06
+    version 0.07
 
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
