@@ -1,19 +1,18 @@
-package Perinci::To::DocBase::I18N;
+package Perinci::To::Text::I18N;
 
-use base 'Locale::Maketext';
-use Locale::Maketext::Lexicon;
+use parent 'Perinci::To::DocBase::I18N';
 
 our $VERSION = '0.06'; # VERSION
 
 1;
-# ABSTRACT: Project class for Perinci::To::DocBase
+# ABSTRACT: Project class for Perinci::To::Text
 
 __END__
 =pod
 
 =head1 NAME
 
-Perinci::To::DocBase::I18N - Project class for Perinci::To::DocBase
+Perinci::To::Text::I18N - Project class for Perinci::To::Text
 
 =head1 VERSION
 

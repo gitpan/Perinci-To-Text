@@ -8,7 +8,7 @@ extends 'Perinci::To::DocBase';
 
 has wrap => (is => 'rw', default=>sub{1});
 
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -223,7 +223,7 @@ Perinci::To::Text - Generate text documentation from Rinci metadata
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 AUTHOR
 
