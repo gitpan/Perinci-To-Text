@@ -1,0 +1,28 @@
+Revision history for Perinci-To-Text
+
+0.05     2012-03-13
+
+         Rename distribution from Sub-Spec-To-Text to Perinci-To-Text. Follow
+         Rinci 1.1 specification.
+
+
+0.04     2011-11-23
+
+         No functional changes. Replace Data::Sah::Util with Data::Sah.
+
+
+0.03     2011-08-31
+
+         No functional changes. Updated because _parse_schema() is moved from
+         Sub::Spec::Utils to Data::Sah::Util.
+
+
+0.02     2011-08-30
+
+         No functional changes. Add empty placeholder module
+         Sub::Spec::To::Text. Fix example in Synopsis.
+
+
+0.01     2011-08-24
+
+         First release.
