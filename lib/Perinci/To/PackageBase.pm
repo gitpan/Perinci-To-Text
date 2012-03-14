@@ -1,34 +1,29 @@
-package Perinci::To::DocBase;
+package Perinci::To::PackageBase;
 
 use 5.010;
 use Log::Any '$log';
 use Moo;
 
+extends 'SHARYANTO::Doc::Base';
+
 has url => (is=>'rw');
-has sections => (is=>'rw');
 has function_sections => (is => 'rw');
 #has method_sections => (is => 'rw');
-has lang => (is => 'rw');
-has fallback_lang => (is => 'rw');
-has mark_fallback_text => (is => 'rw', default=>sub{1});
-has loc_class => (is => 'rw');
-has _pa => (is => 'rw'); # store Perinci::Access object
-has _lines => (is => 'rw'); # store final result, array
-has _parse => (is => 'rw'); # store parsed items, hash
-has _lh => (is => 'rw'); # store localize handle
-has _indent_level => (is => 'rw');
-has indent => (is => 'rw', default => sub{"  "}); # indent character
+has _pa => (
+    is => 'rw',
+    lazy => 1,
+    default => sub {
+        Perinci::Access->new;
+    },
+); # store Perinci::Access object
 
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 sub BUILD {
-    require Module::Load;
     require Perinci::Access;
-    require SHARYANTO::Package::Util;
 
     my ($self, $args) = @_;
     $self->{url} or die "Please specify url";
-    $self->{_pa} //= Perinci::Access->new;
     $self->{sections} //= [
         'summary',
         'version',
@@ -44,45 +39,7 @@ sub BUILD {
         'examples',
         'links',
     ];
-    $self->{method_sections} //= $self->{function_sections};
-    $self->{lang} //= "en_US";
-    $self->{fallback_lang} //= "en_US";
-}
-
-sub add_section_before {
-    my ($self, $name, $before) = @_;
-    my $ss = $self->sections;
-    return unless $ss;
-    my $i = 0;
-    my $added;
-    while ($i < @$ss && defined($before)) {
-        if ($ss->[$i] eq $before) {
-            my $pos = $i;
-            splice @$ss, $pos, 0, $name;
-            $added++;
-            last;
-        }
-        $i++;
-    }
-    unshift @$ss, $name unless $added;
-}
-
-sub add_section_after {
-    my ($self, $name, $after) = @_;
-    my $ss = $self->sections;
-    return unless $ss;
-    my $i = 0;
-    my $added;
-    while ($i < @$ss && defined($after)) {
-        if ($ss->[$i] eq $after) {
-            my $pos = $i+1;
-            splice @$ss, $pos, 0, $name;
-            $added++;
-            last;
-        }
-        $i++;
-    }
-    push @$ss, $name unless $added;
+    #$self->{method_sections} //= $self->{function_sections};
 }
 
 sub add_function_section_before {
@@ -121,20 +78,6 @@ sub add_function_section_after {
     push @$ss, $name unless $added;
 }
 
-sub delete_section {
-    my ($self, $name) = @_;
-    my $ss = $self->sections;
-    return unless $ss;
-    my $i = 0;
-    while ($i < @$ss) {
-        if ($ss->[$i] eq $name) {
-            splice @$ss, $i, 1;
-        } else {
-            $i++;
-        }
-    }
-}
-
 sub delete_function_section {
     my ($self, $name) = @_;
     my $ss = $self->function_sections;
@@ -147,102 +90,6 @@ sub delete_function_section {
             $i++;
         }
     }
-}
-
-# return single-line dump of data structure, e.g. "[1, 2, 3]" (no trailing
-# newlines either).
-sub dump_data_sl {
-    require Data::Dump::OneLine;
-
-    my ($self, $data) = @_;
-    Data::Dump::OneLine::dump1($data);
-}
-
-# return a pretty dump of data structure
-sub dump_data {
-    require Data::Dump;
-
-    my ($self, $data) = @_;
-    Data::Dump::dump($data);
-}
-
-sub add_lines {
-    my $self = shift;
-    my $opts;
-    if (ref($_[0]) eq 'HASH') { $opts = shift }
-    $opts //= {};
-
-    my @lines = map { $_ . (/\n\z/s ? "" : "\n") }
-        map {/\n/ ? split /\n/ : $_} @_;
-
-    my $indent = $self->indent x $self->_indent_level;
-    push @{$self->_lines},
-        map {"$indent$_"} @lines;
-}
-
-sub inc_indent {
-    my ($self, $n) = @_;
-    $n //= 1;
-    $self->{_indent_level} += $n;
-}
-
-sub dec_indent {
-    my ($self, $n) = @_;
-    $n //= 1;
-    $self->{_indent_level} -= $n;
-    die "BUG: Negative indent level" unless $self->{_indent_level} >=0;
-}
-
-sub loc {
-    my ($self, @args) = @_;
-    $self->_lh->maketext(@args);
-}
-
-sub _trim_blank_lines {
-    my $self = shift;
-    local $_ = shift;
-    return $_ unless defined;
-    s/\A(?:\n\s*)+//;
-    s/(?:\n\s*){2,}\z/\n/;
-    $_;
-}
-
-# get text from property of appropriate language. XXX should be moved to
-# Perinci-Object later.
-sub _get_langprop {
-    my ($self, $meta, $prop, $opts) = @_;
-    $opts    //= {};
-    my $lang   = $self->{lang};
-    my $mlang  = $meta->{default_lang} // "en_US";
-    my $fblang = $self->{fallback_lang};
-
-    my $v;
-    my $x; # x = exists
-    if ($lang eq $mlang) {
-        $x = exists $meta->{$prop};
-        $v = $meta->{$prop};
-    } else {
-        my $k = "$prop.alt.lang.$lang";
-        $x = exists $meta->{$k};
-        $v = $meta->{$k};
-    }
-    $v = $self->_trim_blank_lines($v);
-    return $v if $x;
-
-    if ($fblang ne $lang) {
-        if ($fblang eq $mlang) {
-            $v = $meta->{$prop};
-        } else {
-            my $k = "$prop.alt.lang.$fblang";
-            $v = $meta->{$k};
-        }
-        $v = $self->_trim_blank_lines($v);
-        if (defined($v) && $self->mark_fallback_text) {
-            my $has_nl = $v =~ s/\n\z//;
-            $v = "{$fblang $v}" . ($has_nl ? "\n" : "");
-        }
-    }
-    $v;
 }
 
 sub parse_summary {
@@ -383,7 +230,7 @@ sub fparse_result {
     if ($fmeta->{result_naked}) {
         $p->{human_ret} = $p->{human_res};
     } else {
-        $p->{human_ret} = '[code, msg, result, meta]';
+        $p->{human_ret} = '[status, msg, result, meta]';
     }
 
     $p->{summary}     = $self->_get_langprop($fmeta, "summary");
@@ -464,23 +311,9 @@ sub parse_links {
 
 sub gen_links {}
 
-sub _init_lh {
-    my ($self) = @_;
-    return if $self->{_lh};
-
-    my $default_class = ref($self) . '::I18N';
-    $self->{loc_class} //= $default_class;
-    Module::Load::load($self->{loc_class});
-    $self->{_loc_obj}   = $self->{loc_class}->new;
-    $self->{_lh}        = $self->{_loc_obj}->get_handle($self->lang)
-        or die "Can't determine language";
-}
-
 sub generate {
     my ($self, %opts) = @_;
-    $log->tracef("-> generate(opts=%s)", \%opts);
-
-    $self->_init_lh;
+    $log->tracef("-> PackageBase's generate(opts=%s)", \%opts);
 
     # let's retrieve the metadatas first
 
@@ -509,56 +342,25 @@ sub generate {
     $self->{_child_metas} = $res->[2];
     #$log->tracef("child_metas=%s", $self->{_child_metas});
 
-    $self->_lines([]);
-    $self->_indent_level(0);
-    $self->_parse({});
-    for my $s (@{ $self->sections // [] }) {
-        my $meth = "parse_$s";
-        $log->tracef("=> $meth()");
-        $self->$meth;
-        $meth = "gen_$s";
-        $log->tracef("=> $meth()");
-        $self->$meth;
-    }
+    $res = $self->SUPER::generate(%opts);
 
-    $log->tracef("<- generate()");
-    join("", @{ $self->_lines });
+    $log->tracef("<- PackageBase's generate()");
+    $res;
 }
 
 1;
-#ABSTRACT: Base class for class that generates documentation from Rinci metadata
-
+# ABSTRACT: Base class for Perinci::To::* package documentation generators
 
 __END__
 =pod
 
 =head1 NAME
 
-Perinci::To::DocBase - Base class for class that generates documentation from Rinci metadata
+Perinci::To::PackageBase - Base class for Perinci::To::* package documentation generators
 
 =head1 VERSION
 
-version 0.07
-
-=head1 DESCRIPTION
-
-DocBase is the base class for classes that produce documentation from Rinci
-metadata. It provides i18n class using L<Locale::Maketext>
-(L<Perinci::To::DocBase::I18N>) and you can access the language handle at
-$self->_lh.
-
-To generate a documentation, first you provide a list of section names in
-C<sections>. Then you run C<generate()>, which will call C<parse_SECTION> and
-C<gen_SECTION> methods for each section consecutively. C<parse_*> is supposed to
-parse information from the metadata into a form readily usable in $self->_parse
-hash. C<gen_*> is supposed to generate the actual section in the final
-documentation format, by calling C<add_lines> to add text. The base class
-provides many of the C<parse_*> methods but provides none of the C<gen_*>
-methods, which must be supplied by subclasses like L<Perinci::To::Text>,
-L<Perinci::To::POD>, L<Perinci::To::HTML>. Finally all the added lines is
-concatenated together and returned.
-
-=for Pod::Coverate ^section_ ^parse_
+version 0.08
 
 =head1 AUTHOR
 

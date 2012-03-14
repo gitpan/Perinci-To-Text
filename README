@@ -1,8 +1,9 @@
 NAME
-    Perinci::To::Text - Generate text documentation from Rinci metadata
+    Perinci::To::Text - Generate text documentation from Rinci package
+    metadata
 
 VERSION
-    version 0.07
+    version 0.08
 
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>

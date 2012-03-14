@@ -6,10 +6,10 @@ MANIFEST.SKIP
 META.yml
 README
 dist.ini
-lib/Perinci/To/DocBase.pm
-lib/Perinci/To/DocBase/I18N.pm
-lib/Perinci/To/DocBase/I18N/en.pm
-lib/Perinci/To/DocBase/I18N/id.pm
+lib/Perinci/To/PackageBase.pm
+lib/Perinci/To/PackageBase/I18N.pm
+lib/Perinci/To/PackageBase/I18N/en.pm
+lib/Perinci/To/PackageBase/I18N/id.pm
 lib/Perinci/To/Text.pm
 lib/Perinci/To/Text/I18N.pm
 lib/Perinci/To/Text/I18N/en.pm

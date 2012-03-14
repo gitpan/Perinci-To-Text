@@ -4,11 +4,11 @@ use 5.010;
 use Log::Any '$log';
 use Moo;
 
-extends 'Perinci::To::DocBase';
+extends 'Perinci::To::PackageBase';
 
 has wrap => (is => 'rw', default=>sub{1});
 
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -214,7 +214,7 @@ sub gen_functions {
 }
 
 1;
-# ABSTRACT: Generate text documentation from Rinci metadata
+# ABSTRACT: Generate text documentation from Rinci package metadata
 
 
 __END__
@@ -222,11 +222,11 @@ __END__
 
 =head1 NAME
 
-Perinci::To::Text - Generate text documentation from Rinci metadata
+Perinci::To::Text - Generate text documentation from Rinci package metadata
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 AUTHOR
 

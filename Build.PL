@@ -12,12 +12,12 @@ my %module_build_args = (
   "configure_requires" => {
     "Module::Build" => "0.3601"
   },
-  "dist_abstract" => "Generate text documentation from Rinci metadata",
+  "dist_abstract" => "Generate text documentation from Rinci package metadata",
   "dist_author" => [
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-To-Text",
-  "dist_version" => "0.07",
+  "dist_version" => "0.08",
   "license" => "perl",
   "module_name" => "Perinci::To::Text",
   "recommends" => {},
@@ -29,6 +29,7 @@ my %module_build_args = (
     "List::MoreUtils" => 0,
     "Perinci::Examples" => 0,
     "Rinci" => "1.1.10",
+    "SHARYANTO::Doc::Base" => 0,
     "Test::More" => "0.96",
     "perl" => "5.010000"
   },

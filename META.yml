@@ -1,5 +1,5 @@
 ---
-abstract: 'Generate text documentation from Rinci metadata'
+abstract: 'Generate text documentation from Rinci package metadata'
 author:
   - 'Steven Haryanto <stevenharyanto@gmail.com>'
 build_requires:
@@ -20,9 +20,10 @@ requires:
   List::MoreUtils: 0
   Perinci::Examples: 0
   Rinci: 1.1.10
+  SHARYANTO::Doc::Base: 0
   Test::More: 0.96
   perl: 5.010000
 resources:
   homepage: http://search.cpan.org/dist/Perinci-To-Text/
   repository: http://github.com/sharyanto/perl-Perinci-To-Text
-version: 0.07
+version: 0.08
