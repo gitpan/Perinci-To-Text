@@ -28,4 +28,4 @@ requires:
 resources:
   homepage: http://search.cpan.org/dist/Perinci-To-Text/
   repository: http://github.com/sharyanto/perl-Perinci-To-Text
-version: 0.09
+version: 0.10

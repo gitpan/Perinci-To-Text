@@ -11,6 +11,7 @@ lib/Perinci/To/PackageBase/I18N.pm
 lib/Perinci/To/PackageBase/I18N/en.pm
 lib/Perinci/To/PackageBase/I18N/id.pm
 lib/Perinci/To/Text.pm
+lib/Perinci/To/Text/AddDocLinesRole.pm
 lib/Perinci/To/Text/I18N.pm
 lib/Perinci/To/Text/I18N/en.pm
 lib/Perinci/To/Text/I18N/id.pm

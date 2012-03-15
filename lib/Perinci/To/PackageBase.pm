@@ -18,16 +18,16 @@ has _pa => (
     is => 'rw',
     lazy => 1,
     default => sub {
+        require Perinci::Access;
         Perinci::Access->new;
     },
 ); # store Perinci::Access object
 
-our $VERSION = '0.09'; # VERSION
+our $VERSION = '0.10'; # VERSION
 
 sub BUILD {
-    require Perinci::Access;
-
     my ($self, $args) = @_;
+
     $self->{url} or die "Please specify url";
     $self->{doc_sections} //= [
         'summary',
@@ -354,7 +354,7 @@ Perinci::To::PackageBase - Base class for Perinci::To::* package documentation g
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 AUTHOR
 
