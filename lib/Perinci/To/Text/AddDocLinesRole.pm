@@ -4,7 +4,7 @@ use 5.010;
 use Log::Any '$log';
 use Moo::Role;
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 has wrap => (is => 'rw', default => sub {1});
 
@@ -100,7 +100,7 @@ Perinci::To::Text::AddDocLinesRole - Role which provides add_doc_lines() with te
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 DESCRIPTION
 
@@ -119,6 +119,8 @@ Whether to do text wrapping.
 =head1 METHODS
 
 =head2 $o->add_doc_lines([$opts, ]@lines)
+
+=head1 FUNCTIONS
 
 =head1 AUTHOR
 

@@ -21,11 +21,11 @@ requires:
   Perinci::Examples: 0
   Rinci: 1.1.10
   SHARYANTO::Role::Doc::Section: 0
-  SHARYANTO::Role::I18N: 0
+  SHARYANTO::Role::I18N: 0.15
   SHARYANTO::Role::I18NRinci: 0
   Test::More: 0.96
   perl: 5.010000
 resources:
   homepage: http://search.cpan.org/dist/Perinci-To-Text/
   repository: http://github.com/sharyanto/perl-Perinci-To-Text
-version: 0.10
+version: 0.11

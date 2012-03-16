@@ -23,7 +23,7 @@ has _pa => (
     },
 ); # store Perinci::Access object
 
-our $VERSION = '0.10'; # VERSION
+our $VERSION = '0.11'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -354,7 +354,9 @@ Perinci::To::PackageBase - Base class for Perinci::To::* package documentation g
 
 =head1 VERSION
 
-version 0.10
+version 0.11
+
+=head1 FUNCTIONS
 
 =head1 AUTHOR
 

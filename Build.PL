@@ -17,7 +17,7 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-To-Text",
-  "dist_version" => "0.10",
+  "dist_version" => "0.11",
   "license" => "perl",
   "module_name" => "Perinci::To::Text",
   "recommends" => {},
@@ -30,7 +30,7 @@ my %module_build_args = (
     "Perinci::Examples" => 0,
     "Rinci" => "1.1.10",
     "SHARYANTO::Role::Doc::Section" => 0,
-    "SHARYANTO::Role::I18N" => 0,
+    "SHARYANTO::Role::I18N" => "0.15",
     "SHARYANTO::Role::I18NRinci" => 0,
     "Test::More" => "0.96",
     "perl" => "5.010000"
