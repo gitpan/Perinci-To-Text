@@ -4,7 +4,7 @@ use base 'Perinci::To::PackageBase::I18N';
 use Locale::Maketext::Lexicon::Gettext;
 our %Lexicon = %{ Locale::Maketext::Lexicon::Gettext->parse(<DATA>) };
 
-our $VERSION = '0.12'; # VERSION
+our $VERSION = '0.13'; # VERSION
 
 #use Data::Dump; dd \%Lexicon;
 
@@ -20,7 +20,7 @@ Perinci::To::PackageBase::I18N::en - English translation for Perinci::To::Packag
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 DESCRIPTION
 
@@ -191,6 +191,9 @@ msgstr "Arguments related to '%1'"
 
 msgid  "'*' denotes required arguments"
 msgstr "'*' denotes required arguments"
+
+msgid  "Special arguments"
+msgstr "Special arguments"
 
 msgid  "Result"
 msgstr "Result"
