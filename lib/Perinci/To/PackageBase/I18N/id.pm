@@ -4,7 +4,7 @@ use base 'Perinci::To::PackageBase::I18N';
 use Locale::Maketext::Lexicon::Gettext;
 our %Lexicon = %{ Locale::Maketext::Lexicon::Gettext->parse(<DATA>) };
 
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '0.12'; # VERSION
 
 #use Data::Dump; dd \%Lexicon;
 
@@ -20,9 +20,17 @@ Perinci::To::PackageBase::I18N::id - Indonesian translation for Perinci::To::Pac
 
 =head1 VERSION
 
-version 0.11
+version 0.12
+
+=head1 DESCRIPTION
+
+
+This module has L<Rinci> metadata.
 
 =head1 FUNCTIONS
+
+
+None are exported by default, but they are exportable.
 
 =head1 AUTHOR
 
@@ -195,11 +203,43 @@ msgstr "Mengembalikan hasil terbungkus (larik). Elemen pertama (status) adalah b
 
 # function features
 
-msgid  "This function supports undo operation. Please read 'The undo protocol' in Rinci::function specification."
-msgstr "Fungsi ini mendukung operasi undo (pembatalan). Silakan baca 'The undo protocol' di spesifikasi Rinci::function."
+# OLD
+#msgid  "This function supports undo operation. Please read 'The undo protocol' in Rinci::function specification."
+#msgstr "Fungsi ini mendukung operasi undo (pembatalan). Silakan baca 'The undo protocol' di spesifikasi Rinci::function."
 
-msgid  "This function is declared as %1 (%2). Please read the '%1' feature in Rinci::function specification."
-msgid  "Fungsi ini dideklarasikan %1 (%2). Silakan baca fitur '%1' di spesifikasi Rinci::function."
+# OLD
+#msgid  "This function is declared as %1 (%2). Please read the '%1' feature in Rinci::function specification."
+#msgid  "Fungsi ini dideklarasikan %1 (%2). Silakan baca fitur '%1' di spesifikasi Rinci::function."
+
+msgid  "This function supports reverse operation."
+msgstr "Fungsi ini mendukung operasi reverse."
+
+msgid  "This function supports undo operation."
+msgstr "Fungsi ini mendukung operasi undo."
+
+msgid  "This function supports dry-run operation."
+msgstr "Fungsi ini mendukung mode simulasi (dry-run)."
+
+msgid  "This function is pure (produce no side effects)."
+msgstr "Fungsi ini murni (pure, tidak menghasilkan efek samping)."
+
+msgid  "This function is immutable (returns same result for same arguments)."
+msgstr "Fungsi ini bersifat imutabel (immutable, mengembalikan hasil yang sama untuk argumen yang sama)."
+
+msgid  "This function is idempotent (repeated invocations with same arguments has the same effect as single invocation)."
+msgstr "Fungsi ini bersifat idempoten (idempotent, pemanggilan berulang kali dengan argumen yang sama efeknya seperti pemanggilan sekali)."
+
+msgid  "This function requires transactions."
+msgstr "Fungsi ini membutuhkan transaksi."
+
+msgid  "This function can use transactions."
+msgstr "Fungsi ini dapat memakai transaksi."
+
+msgid  "This function can start a new transaction."
+msgstr "Fungsi ini dapat memulai transaksi baru."
+
+msgid  "This function can end (commit) transactions."
+msgstr "Fungsi ini dapat mengakhiri (commit) transaksi."
 
 # test multiline
 

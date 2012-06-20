@@ -7,7 +7,9 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.3601"
+    "Module::Build" => "0.3601",
+    "Perinci::Examples" => 0,
+    "Test::More" => "0.96"
   },
   "configure_requires" => {
     "Module::Build" => "0.3601"
@@ -17,7 +19,7 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-To-Text",
-  "dist_version" => "0.11",
+  "dist_version" => "0.12",
   "license" => "perl",
   "module_name" => "Perinci::To::Text",
   "recommends" => {},
@@ -27,12 +29,10 @@ my %module_build_args = (
     "Data::Dump::OneLine" => 0,
     "Data::Sah" => "0.02",
     "List::MoreUtils" => 0,
-    "Perinci::Examples" => 0,
     "Rinci" => "1.1.10",
     "SHARYANTO::Role::Doc::Section" => 0,
     "SHARYANTO::Role::I18N" => "0.15",
     "SHARYANTO::Role::I18NRinci" => 0,
-    "Test::More" => "0.96",
     "perl" => "5.010000"
   },
   "script_files" => []

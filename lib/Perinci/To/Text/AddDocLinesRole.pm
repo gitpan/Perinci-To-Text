@@ -4,7 +4,7 @@ use 5.010;
 use Log::Any '$log';
 use Moo::Role;
 
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '0.12'; # VERSION
 
 has wrap => (is => 'rw', default => sub {1});
 
@@ -16,6 +16,11 @@ sub add_doc_lines {
 
     my @lines = map { $_ . (/\n\z/s ? "" : "\n") }
         map {/\n/ ? split /\n/ : $_} @_;
+
+    # debug
+    #my @c = caller(2);
+    #$c[1] =~ s!.+/!!;
+    #@lines = map {"[from $c[1]:$c[2]]$_"} @ lines;
 
     my $indent = $self->indent x $self->indent_level;
     my $wrap = $opts->{wrap} // $self->wrap;
@@ -100,7 +105,7 @@ Perinci::To::Text::AddDocLinesRole - Role which provides add_doc_lines() with te
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 DESCRIPTION
 
@@ -120,7 +125,15 @@ Whether to do text wrapping.
 
 =head2 $o->add_doc_lines([$opts, ]@lines)
 
+=head1 DESCRIPTION
+
+
+This module has L<Rinci> metadata.
+
 =head1 FUNCTIONS
+
+
+None are exported by default, but they are exportable.
 
 =head1 AUTHOR
 

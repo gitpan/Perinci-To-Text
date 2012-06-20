@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.11'; # VERSION
+our $VERSION = '0.12'; # VERSION
 
 # generate human-readable short description of schema, this will be
 # handled in the future by Sah itself (using the human compiler).
@@ -37,9 +37,17 @@ Perinci::ToUtil - Temporary utility module
 
 =head1 VERSION
 
-version 0.11
+version 0.12
+
+=head1 DESCRIPTION
+
+
+This module has L<Rinci> metadata.
 
 =head1 FUNCTIONS
+
+
+None are exported by default, but they are exportable.
 
 =head1 AUTHOR
 
