@@ -7,7 +7,7 @@ use Moo;
 extends 'Perinci::To::PackageBase';
 with    'Perinci::To::Text::AddDocLinesRole';
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -36,7 +36,7 @@ sub doc_gen_version {
     $self->add_doc_lines("", uc($self->loc("Version")), "");
 
     $self->inc_indent;
-    $self->add_doc_lines($self->{_meta}{pkg_version} // '?');
+    $self->add_doc_lines($self->{_meta}{entity_version} // '?');
     $self->dec_indent;
 }
 
@@ -145,7 +145,7 @@ Perinci::To::Text - Generate text documentation from Rinci package metadata
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 DESCRIPTION
 

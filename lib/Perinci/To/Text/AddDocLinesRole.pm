@@ -4,7 +4,7 @@ use 5.010;
 use Log::Any '$log';
 use Moo::Role;
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 has wrap => (is => 'rw', default => sub {1});
 
@@ -105,7 +105,7 @@ Perinci::To::Text::AddDocLinesRole - Role which provides add_doc_lines() with te
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 DESCRIPTION
 

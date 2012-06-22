@@ -20,7 +20,7 @@ requires:
   Data::Dump::OneLine: 0
   Data::Sah: 0.02
   List::MoreUtils: 0
-  Rinci: 1.1.10
+  Rinci: 1.1.11
   SHARYANTO::Role::Doc::Section: 0
   SHARYANTO::Role::I18N: 0.15
   SHARYANTO::Role::I18NRinci: 0
@@ -28,4 +28,4 @@ requires:
 resources:
   homepage: http://search.cpan.org/dist/Perinci-To-Text/
   repository: http://github.com/sharyanto/perl-Perinci-To-Text
-version: 0.13
+version: 0.14

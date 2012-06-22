@@ -23,7 +23,7 @@ has _pa => (
     },
 ); # store Perinci::Access object
 
-our $VERSION = '0.13'; # VERSION
+our $VERSION = '0.14'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -138,7 +138,7 @@ sub doc_parse_summary {
 sub doc_gen_summary {}
 
 sub doc_parse_version {
-    # already in meta's pkg_version
+    # already in meta's entity_version
 }
 
 sub doc_gen_version {}
@@ -354,7 +354,7 @@ Perinci::To::PackageBase - Base class for Perinci::To::* package documentation g
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 DESCRIPTION
 
