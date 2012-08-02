@@ -4,7 +4,7 @@ use base 'Perinci::To::PackageBase::I18N';
 use Locale::Maketext::Lexicon::Gettext;
 our %Lexicon = %{ Locale::Maketext::Lexicon::Gettext->parse(<DATA>) };
 
-our $VERSION = '0.14'; # VERSION
+our $VERSION = '0.15'; # VERSION
 
 #use Data::Dump; dd \%Lexicon;
 
@@ -20,7 +20,7 @@ Perinci::To::PackageBase::I18N::en - English translation for Perinci::To::Packag
 
 =head1 VERSION
 
-version 0.14
+version 0.15
 
 =head1 DESCRIPTION
 
@@ -252,3 +252,6 @@ msgid  ""
 msgstr ""
 "Line 1"
 "Line 2"
+
+msgid  "This function dies on error."
+msgstr "This function dies on error."

@@ -30,6 +30,7 @@
             "Data::Dump::OneLine" : 0,
             "Data::Sah" : "0.02",
             "List::MoreUtils" : 0,
+            "Perinci::Access" : "0.25",
             "Rinci" : "v1.1.11",
             "SHARYANTO::Role::Doc::Section" : 0,
             "SHARYANTO::Role::I18N" : "0.15",
@@ -51,6 +52,6 @@
          "url" : "http://github.com/sharyanto/perl-Perinci-To-Text"
       }
    },
-   "version" : "0.14"
+   "version" : "0.15"
 }
 

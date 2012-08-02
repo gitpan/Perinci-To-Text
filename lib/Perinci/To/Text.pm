@@ -7,7 +7,7 @@ use Moo;
 extends 'Perinci::To::PackageBase';
 with    'Perinci::To::Text::AddDocLinesRole';
 
-our $VERSION = '0.14'; # VERSION
+our $VERSION = '0.15'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -78,7 +78,7 @@ sub _fdoc_gen {
             $self->add_doc_lines("") if $i++ > 0 && $prev_arg_has_ct;
             $self->add_doc_lines(join(
                 "",
-                "- ", $name, ($pa->{schema}[1]{req} ? '*' : ''), ' => ',
+                "- ", $name, ($pa->{req} ? '*' : ''), ' => ',
                 $pa->{human_arg},
                 (defined($pa->{human_arg_default}) ?
                      " (" . $self->loc("default") .
@@ -95,8 +95,15 @@ sub _fdoc_gen {
             }
         }
     }
+
+    if ($p->{meta}{dies_on_error}) {
+        $self->add_doc_lines("", $self->loc(
+            "This function dies on error."), "");
+    }
+
     $self->add_doc_lines("", $self->loc("Return value") . ':', "");
     $self->inc_indent;
+    my $rn = $p->{orig_meta}{result_naked} // $p->{meta}{result_naked};
     $self->add_doc_lines($self->loc(join(
         "",
         "Returns an enveloped result (an array). ",
@@ -106,7 +113,7 @@ sub _fdoc_gen {
         "200. Third element (result) is optional, the actual result. Fourth ",
         "element (meta) is called result metadata and is optional, a hash ",
         "that contains extra information.")))
-        unless $p->{schema}{result_naked};
+        unless $rn;
     $self->dec_indent;
 
     $self->dec_indent;
@@ -145,7 +152,7 @@ Perinci::To::Text - Generate text documentation from Rinci package metadata
 
 =head1 VERSION
 
-version 0.14
+version 0.15
 
 =head1 DESCRIPTION
 

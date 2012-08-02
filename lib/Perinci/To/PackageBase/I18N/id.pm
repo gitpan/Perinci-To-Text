@@ -4,7 +4,7 @@ use base 'Perinci::To::PackageBase::I18N';
 use Locale::Maketext::Lexicon::Gettext;
 our %Lexicon = %{ Locale::Maketext::Lexicon::Gettext->parse(<DATA>) };
 
-our $VERSION = '0.14'; # VERSION
+our $VERSION = '0.15'; # VERSION
 
 #use Data::Dump; dd \%Lexicon;
 
@@ -20,7 +20,7 @@ Perinci::To::PackageBase::I18N::id - Indonesian translation for Perinci::To::Pac
 
 =head1 VERSION
 
-version 0.14
+version 0.15
 
 =head1 DESCRIPTION
 
@@ -253,3 +253,5 @@ msgstr ""
 "Baris 1"
 "Baris 2"
 
+msgid  "This function dies on error."
+msgstr "Fungsi ini die() jika menemui kesalahan."
