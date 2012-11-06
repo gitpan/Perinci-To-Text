@@ -3,14 +3,9 @@ NAME
     metadata
 
 VERSION
-    version 0.15
-
-DESCRIPTION
-    This module has Rinci metadata.
+    version 0.16
 
 FUNCTIONS
-    None are exported by default, but they are exportable.
-
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
 

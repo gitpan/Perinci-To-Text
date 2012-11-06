@@ -19,11 +19,21 @@ has _pa => (
     lazy => 1,
     default => sub {
         require Perinci::Access;
-        Perinci::Access->new;
+        require Perinci::Access::InProcess;
+        my $pa = Perinci::Access->new;
+        # slightly reduce startup overhead by avoiding to compile sah schemas
+        my $pai = Perinci::Access::InProcess->new(
+            extra_wrapper_args => {
+                validate_args => 0,
+                compile => 0,
+            },
+        );
+        $pa->{handlers}{pl} = $pai;
+        $pa;
     },
 ); # store Perinci::Access object
 
-our $VERSION = '0.15'; # VERSION
+our $VERSION = '0.16'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -367,17 +377,9 @@ Perinci::To::PackageBase - Base class for Perinci::To::* package documentation g
 
 =head1 VERSION
 
-version 0.15
-
-=head1 DESCRIPTION
-
-
-This module has L<Rinci> metadata.
+version 0.16
 
 =head1 FUNCTIONS
-
-
-None are exported by default, but they are exportable.
 
 =head1 AUTHOR
 

@@ -4,7 +4,7 @@ use base 'Perinci::To::PackageBase::I18N';
 use Locale::Maketext::Lexicon::Gettext;
 our %Lexicon = %{ Locale::Maketext::Lexicon::Gettext->parse(<DATA>) };
 
-our $VERSION = '0.15'; # VERSION
+our $VERSION = '0.16'; # VERSION
 
 #use Data::Dump; dd \%Lexicon;
 
@@ -20,17 +20,9 @@ Perinci::To::PackageBase::I18N::en - English translation for Perinci::To::Packag
 
 =head1 VERSION
 
-version 0.15
-
-=head1 DESCRIPTION
-
-
-This module has L<Rinci> metadata.
+version 0.16
 
 =head1 FUNCTIONS
-
-
-None are exported by default, but they are exportable.
 
 =head1 AUTHOR
 

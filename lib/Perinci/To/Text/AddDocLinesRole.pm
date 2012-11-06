@@ -4,7 +4,7 @@ use 5.010;
 use Log::Any '$log';
 use Moo::Role;
 
-our $VERSION = '0.15'; # VERSION
+our $VERSION = '0.16'; # VERSION
 
 has wrap => (is => 'rw', default => sub {1});
 
@@ -105,7 +105,7 @@ Perinci::To::Text::AddDocLinesRole - Role which provides add_doc_lines() with te
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 DESCRIPTION
 
@@ -125,15 +125,7 @@ Whether to do text wrapping.
 
 =head2 $o->add_doc_lines([$opts, ]@lines)
 
-=head1 DESCRIPTION
-
-
-This module has L<Rinci> metadata.
-
 =head1 FUNCTIONS
-
-
-None are exported by default, but they are exportable.
 
 =head1 AUTHOR
 

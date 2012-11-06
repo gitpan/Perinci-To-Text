@@ -2,7 +2,7 @@ package Perinci::To::Text::I18N;
 
 use parent 'Perinci::To::PackageBase::I18N';
 
-our $VERSION = '0.15'; # VERSION
+our $VERSION = '0.16'; # VERSION
 
 1;
 # ABSTRACT: Project class for Perinci::To::Text
@@ -16,17 +16,9 @@ Perinci::To::Text::I18N - Project class for Perinci::To::Text
 
 =head1 VERSION
 
-version 0.15
-
-=head1 DESCRIPTION
-
-
-This module has L<Rinci> metadata.
+version 0.16
 
 =head1 FUNCTIONS
-
-
-None are exported by default, but they are exportable.
 
 =head1 AUTHOR
 

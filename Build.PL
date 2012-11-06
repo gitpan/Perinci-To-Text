@@ -19,22 +19,28 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-To-Text",
-  "dist_version" => "0.15",
+  "dist_version" => "0.16",
   "license" => "perl",
   "module_name" => "Perinci::To::Text",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "Data::Dump" => 0,
     "Data::Dump::OneLine" => 0,
-    "Data::Sah" => "0.02",
+    "Data::Sah" => "0.07",
     "List::MoreUtils" => 0,
+    "Locale::Maketext::Lexicon" => 0,
+    "Locale::Maketext::Lexicon::Gettext" => 0,
+    "Log::Any" => 0,
+    "Moo" => 0,
+    "Moo::Role" => 0,
     "Perinci::Access" => "0.25",
-    "Rinci" => "1.1.11",
+    "Perinci::Access::InProcess" => "0.38",
+    "Perinci::Object" => "0.25",
+    "Rinci" => "v1.1.11",
     "SHARYANTO::Role::Doc::Section" => 0,
     "SHARYANTO::Role::I18N" => "0.15",
     "SHARYANTO::Role::I18NRinci" => 0,
-    "perl" => "5.010000"
+    "perl" => "5.010001"
   },
   "script_files" => []
 );
