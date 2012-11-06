@@ -33,7 +33,7 @@ has _pa => (
     },
 ); # store Perinci::Access object
 
-our $VERSION = '0.17'; # VERSION
+our $VERSION = '0.18'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -192,7 +192,7 @@ sub fdoc_parse_arguments {
     my $fmeta  = $self->{_fmeta};
     my $fometa = $self->{_fometa};
 
-    my $aa = $fometa->{args_as} // $fmeta->{args_as};
+    my $aa = $fometa->{args_as} // $fmeta->{args_as} // 'hash';
     my $paa;
     if ($aa eq 'hash') {
         $paa = '(%args)';
@@ -377,7 +377,7 @@ Perinci::To::PackageBase - Base class for Perinci::To::* package documentation g
 
 =head1 VERSION
 
-version 0.17
+version 0.18
 
 =head1 FUNCTIONS
 
