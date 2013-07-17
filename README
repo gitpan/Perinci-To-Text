@@ -3,15 +3,36 @@ NAME
     metadata
 
 VERSION
-    version 0.18
+    version 0.19
 
-FUNCTIONS
+SYNOPSIS
+     use Perinci::To::POD;
+
+     # to generate text documentation for the whole module
+     my $doc = Perinci::To::Text->new(url => "/Some/Module/");
+     say $doc->generate_doc;
+
+    You can also try the peri-doc script (included in the Perinci::To::POD
+    distribution) with the "--format text" option:
+
+     % peri-doc --format text Some::Module
+
+    To generate a usage-like help message for a single function only, you
+    can try Perinci::CmdLine, using it like this:
+
+     my $cmd = Perinci::CmdLine->new(url => "/Some/Module/func");
+     $cmd->run_help; # will print help text
+
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2012 by Steven Haryanto.
+    This software is copyright (c) 2013 by Steven Haryanto.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
+
+DESCRIPTION
+FUNCTIONS
+    None are exported by default, but they are exportable.
 

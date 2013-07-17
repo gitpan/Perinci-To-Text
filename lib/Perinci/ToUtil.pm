@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.18'; # VERSION
+our $VERSION = '0.19'; # VERSION
 
 # generate human-readable short description of schema, this will be
 # handled in the future by Sah itself (using the human compiler).
@@ -28,8 +28,11 @@ sub sah2human_short {
 1;
 # ABSTRACT: Temporary utility module
 
+
 __END__
 =pod
+
+=encoding utf-8
 
 =head1 NAME
 
@@ -37,9 +40,14 @@ Perinci::ToUtil - Temporary utility module
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 FUNCTIONS
+
+=head2 sah2human_short
+
+
+None are exported by default, but they are exportable.
 
 =head1 AUTHOR
 
@@ -47,10 +55,12 @@ Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Steven Haryanto.
+This software is copyright (c) 2013 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
+
+=head1 DESCRIPTION
 
 =cut
 

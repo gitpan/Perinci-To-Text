@@ -1,13 +1,13 @@
 package Perinci::To::Text;
 
-use 5.010;
+use 5.010001;
 use Log::Any '$log';
 use Moo;
 
 extends 'Perinci::To::PackageBase';
 with    'Perinci::To::Text::AddDocLinesRole';
 
-our $VERSION = '0.18'; # VERSION
+our $VERSION = '0.19'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -146,15 +146,36 @@ sub doc_gen_functions {
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Perinci::To::Text - Generate text documentation from Rinci package metadata
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
-=head1 FUNCTIONS
+=head1 SYNOPSIS
+
+ use Perinci::To::POD;
+
+ # to generate text documentation for the whole module
+ my $doc = Perinci::To::Text->new(url => "/Some/Module/");
+ say $doc->generate_doc;
+
+You can also try the L<peri-doc> script (included in the L<Perinci::To::POD>
+distribution) with the C<--format text> option:
+
+ % peri-doc --format text Some::Module
+
+To generate a usage-like help message for a single function only, you can try
+L<Perinci::CmdLine>, using it like this:
+
+ my $cmd = Perinci::CmdLine->new(url => "/Some/Module/func");
+ $cmd->run_help; # will print help text
+
+=for Pod::Coverage .+
 
 =head1 AUTHOR
 
@@ -162,10 +183,17 @@ Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Steven Haryanto.
+This software is copyright (c) 2013 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
+
+=head1 DESCRIPTION
+
+=head1 FUNCTIONS
+
+
+None are exported by default, but they are exportable.
 
 =cut
 
