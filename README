@@ -1,27 +1,26 @@
 NAME
-    Perinci::To::Text - Generate text documentation from Rinci package
+    Perinci::To::Text - Generate text documentation for a package from Rinci
     metadata
 
 VERSION
-    version 0.19
+    version 0.20
 
 SYNOPSIS
      use Perinci::To::POD;
-
-     # to generate text documentation for the whole module
      my $doc = Perinci::To::Text->new(url => "/Some/Module/");
-     say $doc->generate_doc;
+     say $doc->gen_doc;
 
-    You can also try the peri-doc script (included in the Perinci::To::POD
-    distribution) with the "--format text" option:
+    You can also try the peri-pkg-doc script (included in the
+    Perinci::To::POD distribution) with the "--format text" option:
 
-     % peri-doc --format text Some::Module
+     % peri-pkg-doc --format text /Some/Module/
 
-    To generate a usage-like help message for a single function only, you
-    can try Perinci::CmdLine, using it like this:
+    To generate documentation for a single function, see
+    Perinci::Sub::To::Text or the provided command-line script
+    peri-func-doc.
 
-     my $cmd = Perinci::CmdLine->new(url => "/Some/Module/func");
-     $cmd->run_help; # will print help text
+    To generate a usage-like help message for a single function, you can try
+    the peri-func-usage from the Perinci::CmdLine distribution.
 
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
@@ -31,8 +30,4 @@ COPYRIGHT AND LICENSE
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
-
-DESCRIPTION
-FUNCTIONS
-    None are exported by default, but they are exportable.
 

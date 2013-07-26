@@ -7,44 +7,60 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.3601",
-    "Perinci::Examples" => 0,
-    "Test::More" => "0.96"
+    "Module::Build" => "0.3601"
   },
   "configure_requires" => {
     "Module::Build" => "0.3601"
   },
-  "dist_abstract" => "Generate text documentation from Rinci package metadata",
+  "dist_abstract" => "Generate text documentation for a package from Rinci metadata",
   "dist_author" => [
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-To-Text",
-  "dist_version" => "0.19",
+  "dist_version" => "0.20",
   "license" => "perl",
   "module_name" => "Perinci::To::Text",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "Data::Dump::OneLine" => 0,
-    "Data::Sah" => "0.07",
-    "List::MoreUtils" => 0,
     "Locale::Maketext::Lexicon" => 0,
     "Locale::Maketext::Lexicon::Gettext" => 0,
     "Log::Any" => 0,
     "Moo" => 0,
-    "Moo::Role" => 0,
     "Perinci::Access" => "0.25",
     "Perinci::Access::InProcess" => "0.38",
     "Perinci::Object" => "0.11",
+    "Perinci::Sub::To::FuncBase" => 0,
+    "Perinci::Sub::To::Text" => 0,
+    "Perinci::ToUtil" => 0,
     "Rinci" => "v1.1.11",
-    "SHARYANTO::Role::Doc::Section" => 0,
+    "SHARYANTO::Role::Doc::Section" => "0.53",
+    "SHARYANTO::Role::Doc::Section::AddTextLines" => "0.53",
     "SHARYANTO::Role::I18N" => "0.15",
     "SHARYANTO::Role::I18NRinci" => 0,
     "perl" => "5.010001"
   },
-  "script_files" => []
+  "script_files" => [],
+  "test_requires" => {
+    "Perinci::Examples" => 0,
+    "Test::More" => "0.96"
+  }
 );
 
+
+unless ( eval { Module::Build->VERSION(0.4004) } ) {
+  my $tr = delete $module_build_args{test_requires};
+  my $br = $module_build_args{build_requires};
+  for my $mod ( keys %$tr ) {
+    if ( exists $br->{$mod} ) {
+      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
+    }
+    else {
+      $br->{$mod} = $tr->{$mod};
+    }
+  }
+}
 
 my $build = Module::Build->new(%module_build_args);
 
