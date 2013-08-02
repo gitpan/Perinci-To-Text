@@ -30,7 +30,7 @@ has _pa => (
     },
 ); # store Perinci::Access object
 
-our $VERSION = '0.20'; # VERSION
+our $VERSION = '0.21'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -185,7 +185,7 @@ Perinci::To::PackageBase - Base class for Perinci::To::* package documentation g
 
 =head1 VERSION
 
-version 0.20
+version 0.21
 
 =for Pod::Coverage .+
 
@@ -199,5 +199,12 @@ This software is copyright (c) 2013 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
+
+=head1 DESCRIPTION
+
+=head1 FUNCTIONS
+
+
+None are exported by default, but they are exportable.
 
 =cut

@@ -36,4 +36,4 @@ requires:
 resources:
   homepage: http://search.cpan.org/dist/Perinci-To-Text/
   repository: http://github.com/sharyanto/perl-Perinci-To-Text
-version: 0.20
+version: 0.21
