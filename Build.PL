@@ -17,7 +17,7 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-To-Text",
-  "dist_version" => "0.21",
+  "dist_version" => "0.22",
   "license" => "perl",
   "module_name" => "Perinci::To::Text",
   "recommends" => {},
@@ -32,7 +32,7 @@ my %module_build_args = (
     "Perinci::Access::InProcess" => "0.38",
     "Perinci::Object" => "0.11",
     "Perinci::Sub::To::FuncBase" => 0,
-    "Perinci::Sub::To::Text" => 0,
+    "Perinci::Sub::To::Text" => "0.24",
     "Perinci::ToUtil" => 0,
     "Rinci" => "v1.1.11",
     "SHARYANTO::Role::Doc::Section" => "0.53",
@@ -43,8 +43,10 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
+    "Capture::Tiny" => 0,
     "Perinci::Examples" => 0,
-    "Test::More" => "0.96"
+    "Test::More" => "0.96",
+    "blib" => 0
   }
 );
 
