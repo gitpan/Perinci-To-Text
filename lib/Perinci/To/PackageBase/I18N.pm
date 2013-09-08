@@ -3,7 +3,7 @@ package Perinci::To::PackageBase::I18N;
 use base 'Locale::Maketext';
 use Locale::Maketext::Lexicon;
 
-our $VERSION = '0.22'; # VERSION
+our $VERSION = '0.23'; # VERSION
 
 1;
 # ABSTRACT: Project class for Perinci::To::PackageBase
@@ -20,7 +20,7 @@ Perinci::To::PackageBase::I18N - Project class for Perinci::To::PackageBase
 
 =head1 VERSION
 
-version 0.22
+version 0.23
 
 =head1 AUTHOR
 

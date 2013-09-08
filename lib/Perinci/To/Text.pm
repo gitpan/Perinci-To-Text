@@ -7,7 +7,7 @@ use Moo;
 extends 'Perinci::To::PackageBase';
 with    'SHARYANTO::Role::Doc::Section::AddTextLines';
 
-our $VERSION = '0.22'; # VERSION
+our $VERSION = '0.23'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -37,7 +37,7 @@ sub gen_doc_section_version {
     $self->add_doc_lines("", uc($self->loc("Version")), "");
 
     $self->inc_doc_indent;
-    $self->add_doc_lines($self->{_doc_meta}{entity_version} // '?');
+    $self->add_doc_lines($self->{_doc_meta}{entity_v} // '?');
     $self->dec_doc_indent;
 }
 
@@ -91,7 +91,7 @@ Perinci::To::Text - Generate text documentation for a package from Rinci metadat
 
 =head1 VERSION
 
-version 0.22
+version 0.23
 
 =head1 SYNOPSIS
 
