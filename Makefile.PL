@@ -38,12 +38,13 @@ my %WriteMakefileArgs = (
     "SHARYANTO::Role::I18NRinci" => 0
   },
   "TEST_REQUIRES" => {
+    "File::Spec" => 0,
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
     "Perinci::Examples" => 0,
     "Test::More" => "0.96"
   },
-  "VERSION" => "0.25",
+  "VERSION" => "0.26",
   "test" => {
     "TESTS" => "t/*.t"
   }

@@ -7,7 +7,7 @@ use Moo;
 extends 'Perinci::To::PackageBase';
 with    'SHARYANTO::Role::Doc::Section::AddTextLines';
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -89,10 +89,6 @@ __END__
 
 Perinci::To::Text - Generate text documentation for a package from Rinci metadata
 
-=head1 VERSION
-
-version 0.25
-
 =head1 SYNOPSIS
 
  use Perinci::To::POD;
@@ -112,6 +108,24 @@ L<peri-func-usage> from the L<Perinci::CmdLine> distribution.
 
 =for Pod::Coverage .+
 
+=head1 HOMEPAGE
+
+Please visit the project's homepage at
+L<https://metacpan.org/release/Perinci-To-Text>.
+
+=head1 SOURCE
+
+Source repository is at L<https://github.com/sharyanto/perl-Perinci-To-Text>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+http://rt.cpan.org/Public/Dist/Display.html?Name=Perinci-To-Text
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
 =head1 AUTHOR
 
 Steven Haryanto <stevenharyanto@gmail.com>
@@ -122,12 +136,5 @@ This software is copyright (c) 2013 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
-
-=head1 DESCRIPTION
-
-=head1 FUNCTIONS
-
-
-None are exported by default, but they are exportable.
 
 =cut
