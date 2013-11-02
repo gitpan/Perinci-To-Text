@@ -2,9 +2,13 @@ NAME
     Perinci::To::Text - Generate text documentation for a package from Rinci
     metadata
 
+VERSION
+    version 0.27
+
 SYNOPSIS
      use Perinci::To::POD;
-     my $doc = Perinci::To::Text->new(url => "/Some/Module/");
+     my $doc = Perinci::To::Text->new(
+         name=>'Foo::Bar', meta => {...}, child_metas=>{...});
      say $doc->gen_doc;
 
     You can also try the peri-pkg-doc script (included in the

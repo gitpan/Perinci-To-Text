@@ -3,7 +3,7 @@ package Perinci::To::PackageBase::I18N;
 use base 'Locale::Maketext';
 use Locale::Maketext::Lexicon;
 
-our $VERSION = '0.26'; # VERSION
+our $VERSION = '0.27'; # VERSION
 
 1;
 # ABSTRACT: Project class for Perinci::To::PackageBase
@@ -18,10 +18,13 @@ __END__
 
 Perinci::To::PackageBase::I18N - Project class for Perinci::To::PackageBase
 
+=head1 VERSION
+
+version 0.27
+
 =head1 HOMEPAGE
 
-Please visit the project's homepage at
-L<https://metacpan.org/release/Perinci-To-Text>.
+Please visit the project's homepage at L<https://metacpan.org/release/Perinci-To-Text>.
 
 =head1 SOURCE
 

@@ -4,7 +4,7 @@
       "Steven Haryanto <stevenharyanto@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.132140",
+   "generated_by" : "Dist::Zilla version 5.001, CPAN::Meta::Converter version 2.132140",
    "license" : [
       "perl_5"
    ],
@@ -37,8 +37,8 @@
             "Perinci::Access" : "0.25",
             "Perinci::Access::Perl" : "0.38",
             "Perinci::Object" : "0.11",
-            "Perinci::Sub::To::FuncBase" : "0",
-            "Perinci::Sub::To::Text" : "0.24",
+            "Perinci::Sub::To::FuncBase" : "0.28",
+            "Perinci::Sub::To::Text" : "0.28",
             "Perinci::ToUtil" : "0",
             "Rinci" : "v1.1.36",
             "SHARYANTO::Role::Doc::Section" : "0.53",
@@ -53,6 +53,7 @@
             "File::Spec" : "0",
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
+            "Perinci::Access::Perl" : "0.38",
             "Perinci::Examples" : "0",
             "Test::More" : "0.96"
          }
@@ -60,6 +61,6 @@
    },
    "release_status" : "stable",
    "resources" : {},
-   "version" : "0.26"
+   "version" : "0.27"
 }
 

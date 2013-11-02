@@ -4,7 +4,7 @@ use base 'Perinci::To::PackageBase::I18N';
 use Locale::Maketext::Lexicon::Gettext;
 our %Lexicon = %{ Locale::Maketext::Lexicon::Gettext->parse(<DATA>) };
 
-our $VERSION = '0.26'; # VERSION
+our $VERSION = '0.27'; # VERSION
 
 #use Data::Dump; dd \%Lexicon;
 
@@ -19,10 +19,13 @@ our $VERSION = '0.26'; # VERSION
 
 Perinci::To::PackageBase::I18N::en - English translation for Perinci::To::PackageBase
 
+=head1 VERSION
+
+version 0.27
+
 =head1 HOMEPAGE
 
-Please visit the project's homepage at
-L<https://metacpan.org/release/Perinci-To-Text>.
+Please visit the project's homepage at L<https://metacpan.org/release/Perinci-To-Text>.
 
 =head1 SOURCE
 

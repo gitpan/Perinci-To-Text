@@ -2,7 +2,7 @@ package Perinci::To::Text::I18N;
 
 use parent 'Perinci::To::PackageBase::I18N';
 
-our $VERSION = '0.26'; # VERSION
+our $VERSION = '0.27'; # VERSION
 
 1;
 # ABSTRACT: Project class for Perinci::To::Text
@@ -17,10 +17,13 @@ __END__
 
 Perinci::To::Text::I18N - Project class for Perinci::To::Text
 
+=head1 VERSION
+
+version 0.27
+
 =head1 HOMEPAGE
 
-Please visit the project's homepage at
-L<https://metacpan.org/release/Perinci-To-Text>.
+Please visit the project's homepage at L<https://metacpan.org/release/Perinci-To-Text>.
 
 =head1 SOURCE
 
